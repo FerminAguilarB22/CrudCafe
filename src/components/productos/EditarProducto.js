@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Form,Button } from 'react-bootstrap';
 const EditarProducto = () => {
     return (
         <div className="container">

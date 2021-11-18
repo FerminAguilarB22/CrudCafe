@@ -1,10 +1,8 @@
 import React from 'react';
-
+import cafe from '../../img/coffee.jpg'
 const Inicio = () => {
     return (
-        <div>
-            
-        </div>
+            <img src={cafe} alt="cafes" width='100%' />
     );
 };
 
