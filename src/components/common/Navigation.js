@@ -1,29 +1,31 @@
 import React from "react";
-import { Nav } from "react-bootstrap";
-
+import { Navbar, Container, Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 const Navigation = () => {
   return (
     <>
-      <Nav
-        activeKey="/home"
-        onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
-        className='bg-danger py-3 d-flex align-items-center'
-      >
-        <Nav.Item>
-          <Nav.Link href="/home" className='mx-2 text-white fs-4'>CRUD Basico</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-1" className=' text-white'>Inicio</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-2" className=' text-white'>Productos</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-3" className=' text-white'>
-            Nuevo producto
-          </Nav.Link>
-        </Nav.Item>
-      </Nav>
+      <Navbar bg="primary" expand="lg" variant="dark">
+        <Container>
+          <Link to="/" className="navbar-brand">
+            CRUD Basico
+          </Link>
+
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Link to="/" className="nav-link">
+                Inicio
+              </Link>
+              <Link to="/productos" className="nav-link">
+                Productos
+              </Link>
+              <Link to="/error404" className="nav-link">
+                Extra
+              </Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </>
   );
 };
