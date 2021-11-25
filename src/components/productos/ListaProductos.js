@@ -14,7 +14,7 @@ const ListaProductos = (props) => {
           </section>
         <section>
           <ListGroup>{
-            props.productos.map((producto)=><ItemProducto key={producto.id} producto={producto}></ItemProducto>)
+            props.productos.map((producto)=><ItemProducto key={producto.id} producto={producto} consultarAPI={props.consultarAPI}></ItemProducto>)
             }
             
           </ListGroup>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 import { campoRequerido, rangoPrecio } from "../helpers/helpers";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 const AgregarProductos = (props) => {
@@ -29,38 +29,32 @@ const AgregarProductos = (props) => {
       };
       // enviar el objeto producto a la api POST
       try {
-        const parametros ={
+        const parametros = {
           method: "POST",
           headers: {
-            "Content-Type":"application/json"
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify(productoNuevo)
-        }
-        const respuesta = await fetch(URL,parametros); //primer valor el link de la api y segundo valor es un objeto con la sintaxis de arriba (parametros)
+          body: JSON.stringify(productoNuevo),
+        };
+        const respuesta = await fetch(URL, parametros); //primer valor el link de la api y segundo valor es un objeto con la sintaxis de arriba (parametros)
         console.log(respuesta);
-        if(respuesta.status === 201){
+        if (respuesta.status === 201) {
           // mostrar al usuario un cartel de operacion exitosa
           Swal.fire(
-            'Producto creado',
-            'El producro fue cargado correctamente',
-            'success'
-          )
+            "Producto creado",
+            "El producro fue cargado correctamente",
+            "success"
+          );
           // resetear formulario
-            e.target.reset();
-            // consultar los datos de la API
-            props.consultarAPI();
+          e.target.reset();
+          // consultar los datos de la API
+          props.consultarAPI();
           // redireccionar a la lista de productos
-            navegacion('/productos');
-        }else{
+          navegacion("/productos");
+        } else {
           // mostrar cartel de error
-          Swal.fire(
-            'Hubo un error',
-            'Intente nuevamente mas tarde',
-            'error'
-          )
+          Swal.fire("Hubo un error", "Intente nuevamente mas tarde", "error");
         }
-
-
       } catch (error) {
         console.log(error);
       }
@@ -84,7 +78,6 @@ const AgregarProductos = (props) => {
               type="text"
               placeholder="Ej: Café"
               onChange={(e) => setNombreProducto(e.target.value)}
-              
             />
           </Form.Group>
 
@@ -94,7 +87,6 @@ const AgregarProductos = (props) => {
               type="text"
               placeholder="Ej: 50"
               onChange={(e) => setPrecioProducto(e.target.value)}
-              
             />
           </Form.Group>
           <Form.Group className="mb-3">
@@ -102,7 +94,6 @@ const AgregarProductos = (props) => {
             <Form.Select
               aria-label="Default select example"
               onChange={(e) => setCategoria(e.target.value)}
-              
             >
               <option value="">Seleccione una opcion</option>
               <option value="bebida-caliente">Bebida Caliente</option>
