@@ -17,6 +17,42 @@
       "nombreProducto": "Medialuna",
       "precioProducto": "30",
       "categoria": "dulce"
+    },
+    {
+      "nombreProducto": "Sacramento",
+      "precioProducto": "3",
+      "categoria": "sandwich",
+      "id": 4
+    },
+    {
+      "nombreProducto": "Ades de Manzana",
+      "precioProducto": "180",
+      "categoria": "bebida-fria",
+      "id": 5
+    },
+    {
+      "nombreProducto": "Factura",
+      "precioProducto": "65",
+      "categoria": "dulce",
+      "id": 6
+    },
+    {
+      "nombreProducto": "Chocolatada",
+      "precioProducto": "120",
+      "categoria": "bebida-fria",
+      "id": 7
+    },
+    {
+      "nombreProducto": "Licuado",
+      "precioProducto": "150",
+      "categoria": "bebida-fria",
+      "id": 8
+    },
+    {
+      "nombreProducto": "Pan x kg",
+      "precioProducto": "100",
+      "categoria": "salado",
+      "id": 9
     }
   ]
 }

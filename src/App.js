@@ -20,7 +20,7 @@ function App() {
 
   const consultarAPI = async () => {
     try {
-      // codigo que ejecuto normalmente
+      // codigo que ejecuto normalmente, peticion GET
       const respuesta = await fetch(URL);
       const datos = await respuesta.json();
       setProductos(datos);
@@ -42,7 +42,7 @@ function App() {
         <Route
           exact
           path="/productos/nuevo"
-          element={<AgregarProducto></AgregarProducto>}
+          element={<AgregarProducto consultarAPI={consultarAPI}></AgregarProducto>}
         ></Route>
         <Route
           exact

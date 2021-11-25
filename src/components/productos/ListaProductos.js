@@ -1,6 +1,7 @@
 import React from "react";
 import { ListGroup, Button } from "react-bootstrap";
 import ItemProducto from "./ItemProducto";
+import { Link } from "react-router-dom";
 const ListaProductos = (props) => {
   return (
     <>
@@ -9,7 +10,7 @@ const ListaProductos = (props) => {
           <hr />
           <section className='d-flex justify-content-end align-items-center my-5'>
             <h5 className='mx-3'>Agregar nuevos productos:</h5>
-            <Button>Agregar</Button>
+            <Link to='/productos/nuevo' className='btn btn-primary'>Agregar</Link>
           </section>
         <section>
           <ListGroup>{
