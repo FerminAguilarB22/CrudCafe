@@ -1,6 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form,Button } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 const EditarProducto = () => {
+const {id} = useParams();
+const [producto, setProducto] = useState({});
+const URL = process.env.REACT_APP_API_URL + "/" + id;
+
+useEffect(async()=>{
+  // constular un solo elemnto a la api
+  try{
+    const respuesta = await fetch(URL);
+    if (respuesta.status === 200){
+      const dato = await respuesta.json();
+      setProducto(dato);
+    }
+
+  }catch(error){
+    // mostrar mensaje de error
+  }
+
+},[]);
+
+
     return (
         <div className="container">
         <section>
