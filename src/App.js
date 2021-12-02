@@ -47,7 +47,7 @@ function App() {
         <Route
           exact
           path="/productos/editar/:id"
-          element={<EditarProducto></EditarProducto>}
+          element={<EditarProducto consultarAPI={consultarAPI}></EditarProducto>}
         ></Route>
 
         <Route exact path="*" element={<Error404></Error404>}></Route>
