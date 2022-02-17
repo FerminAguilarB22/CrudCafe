@@ -20,7 +20,7 @@ const ItemProducto = (props) => {
       if (result.isConfirmed) {
         // pedir a la api borrar un producto
         try {
-          const URL = process.env.REACT_APP_API_URL + "/" + props.producto.id;
+          const URL = process.env.REACT_APP_API_URL + "/" + props.producto._id;
 
           const respuesta = await fetch(URL,{
             method: "DELETE",
@@ -56,7 +56,7 @@ const ItemProducto = (props) => {
           </span>
         </p>
         <div>
-          <Link to={"/productos/editar/" + props.producto.id}   className="me-2 btn btn-warning">
+          <Link to={"/productos/editar/" + props.producto._id}   className="me-2 btn btn-warning">
             Editar
           </Link>
           <Button variant="danger" onClick={() => eliminarProducto()}>

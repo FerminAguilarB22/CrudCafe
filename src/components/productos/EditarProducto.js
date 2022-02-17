@@ -33,7 +33,7 @@ const EditarProducto = (props) => {
   
     // validar los datos
     if (campoRequerido(nombreProductoRef.current.value)&&campoRequerido(categoria)&&rangoPrecio(precioProductoRef.current.value)){
-      console.log('todo ok pa');
+      
       // crear un objeto y enviarlo a la api
       const productoModificado = {
         nombreProducto : nombreProductoRef.current.value,
